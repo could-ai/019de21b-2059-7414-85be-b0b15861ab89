@@ -83,22 +83,48 @@ class _DashboardScreenState extends State<DashboardScreen> {
           decoration: BoxDecoration(
             color: Theme.of(context).colorScheme.primary,
           ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.end,
+          padding: EdgeInsets.zero,
+          child: Stack(
+            fit: StackFit.expand,
             children: [
-              const Icon(
-                Icons.web,
-                color: Colors.white,
-                size: 48,
+              Image.network(
+                'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=400&auto=format&fit=crop', // Data/Dashboard theme image
+                fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) => Container(
+                  color: Theme.of(context).colorScheme.primary,
+                  child: const Icon(Icons.broken_image, color: Colors.white24),
+                ),
               ),
-              const SizedBox(height: 16),
-              Text(
-                'My Web App',
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(
+              Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [Colors.black.withOpacity(0.7), Colors.transparent],
+                    begin: Alignment.bottomCenter,
+                    end: Alignment.topCenter,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    const Icon(
+                      Icons.web,
                       color: Colors.white,
-                      fontWeight: FontWeight.bold,
+                      size: 32,
                     ),
+                    const SizedBox(height: 8),
+                    Text(
+                      'My Web App',
+                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
@@ -165,7 +191,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.0),
                 child: CircleAvatar(
-                  child: Icon(Icons.person),
+                  backgroundImage: NetworkImage(
+                    'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=150&auto=format&fit=crop', // Professional profile photo
+                  ),
                 ),
               ),
             ],

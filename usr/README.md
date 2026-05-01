@@ -6,6 +6,7 @@ Yeh ek modern, clean aur responsive Flutter web application hai. Is project mein
 
 - **Responsive Design**: Badi screens (Web/Desktop) par sidebar navigation aur choti screens (Mobile) par drawer menu.
 - **Modern UI**: Material 3 guidelines ke mutabiq clean aur aakarshak (attractive) design.
+- **Visuals & Images**: Dashboard drawer aur admin profile ke liye open-source network images ka istemal kiya gaya hai jo app ki khoobsurati ko mazeed badha deta hai.
 - **Analytics Cards**: Dashboard par statistics show karne ke liye khoobsurat cards.
 - **Recent Activity**: Ek recent activity list jo user actions ko show karti hai.
 
